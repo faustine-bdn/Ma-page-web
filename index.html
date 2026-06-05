@@ -76,6 +76,14 @@ header h2{
   color:#d63384;
 }
 
+.burger{
+  display:none;
+  font-size:2rem;
+  cursor:pointer;
+  text-align:center;
+  color:#d63384;
+}
+
 /* SECTION A PROPOS */
 
 .container{
@@ -136,11 +144,87 @@ section{
   line-height:1.8;
 }
 
+/* GALERIE */
+
+.galerie{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.galerie img{
+  width:300px;
+  border-radius:10px;
+  transition:transform 0.3s ease;
+}
+
+.galerie img:hover{
+  transform:scale(1.05);
+}
+
 footer{
   text-align:center;
   margin-top:80px;
   font-size:1.3rem;
   font-style:italic;
+}
+
+/* VERSION MOBILE */
+
+@media screen and (max-width:768px){
+
+  body{
+    padding:20px;
+  }
+
+  .burger{
+    display:block;
+  }
+
+  .menu{
+    border-radius:25px;
+  }
+
+  .menu ul{
+    display:none;
+    flex-direction:column;
+    gap:15px;
+    margin-top:20px;
+    align-items:center;
+  }
+
+  .menu ul.active{
+    display:flex;
+  }
+
+  header h1{
+    font-size:2.8rem;
+  }
+
+  header h2{
+    font-size:1.4rem;
+  }
+
+  .texte h3,
+  .section-simple h3{
+    font-size:2rem;
+  }
+
+  .texte p,
+  .section-simple p{
+    font-size:1.2rem;
+  }
+
+  .photo img{
+    width:100%;
+  }
+
+  .galerie img{
+    width:100%;
+    max-width:350px;
+  }
+
 }
 
 </style>
@@ -155,13 +239,19 @@ footer{
 </header>
 
 <nav class="menu">
-  <ul>
+
+  <div class="burger" onclick="toggleMenu()">
+    ☰
+  </div>
+
+  <ul id="menu-list">
     <li><a href="#accueil">Accueil</a></li>
     <li><a href="#apropos">À propos</a></li>
     <li><a href="#photos">Photos</a></li>
     <li><a href="#betises">Bêtises</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+
 </nav>
 
 <section class="container" id="apropos">
@@ -207,21 +297,7 @@ footer{
   </p>
 </section>
 
-<section id="photos">
-
-    <style>
-        .galerie {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .galerie img {
-            width: 300px;
-            border-radius: 10px;
-        }
-    </style>
+<section id="galerie">
 
     <div class="galerie">
         <img src="Kiki-boit.jpg" alt="Kiki boit">
@@ -229,8 +305,9 @@ footer{
         <img src="Kiki-dort.jpg" alt="Kiki qui dort">
         <img src="Kiki-reveil.jpg" alt="Kiki au réveil">
     </div>
+
 </section>
-  
+
 <section class="section-simple" id="betises">
   <h3>Les bêtises de Kiki</h3>
 
@@ -254,6 +331,12 @@ footer{
 <footer>
   Site dédié à Daiquiri, réalisé par Faustine Beaudoin
 </footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu-list").classList.toggle("active");
+}
+</script>
 
 </body>
 
