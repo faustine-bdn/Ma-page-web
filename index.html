@@ -208,12 +208,29 @@ footer{
 </section>
 
 <section id="photos">
+    <h2>Photos de Kiki</h2>
 
-    <img src="Kiki et moi.jpg" alt="Kiki et moi" width="300">
-    <img src="Kiki bébé.jpg" alt="Kiki bébé" width="300">
-    <img src="Kiki dodo.jpg" alt="Kiki qui dort" width="300">
-    <img src="Kiki réveil.jpg" alt="Kiki au réveil" width="300">
-    <img src="Kiki logique.jpg" alt="Kiki logique" width="300">
+    <style>
+        .galerie {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .galerie img {
+            width: 300px;
+            border-radius: 10px;
+        }
+    </style>
+
+    <div class="galerie">
+        <img src="Kiki-et-moi.jpg" alt="Kiki et moi">
+        <img src="Kiki-bebe.jpg" alt="Kiki bébé">
+        <img src="Kiki-dodo.jpg" alt="Kiki qui dort">
+        <img src="Kiki-reveil.jpg" alt="Kiki au réveil">
+        <img src="Kiki-logique.jpg" alt="Kiki logique">
+    </div>
 </section>
   
 <section class="section-simple" id="betises">
